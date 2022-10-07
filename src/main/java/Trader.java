@@ -61,13 +61,12 @@ public class Trader<T> {
      *
      *       We will call this in exchangeMoney().
      */
-    public int getSellingPrice(T Object) {
-        if(Object instanceof Tradable){
-            Tradable<T> i = new Tradable<T>();
-            //Object i = new Object();
-            return i.getPrice();
+    public int getSellingPrice(T item) {
+        if(item instanceof Tradable){
+            Tradable temp = (Tradable) item;
+            return temp.getPrice();
         }else{
-        return Tradable.MISSING_PRICE;
+            return Tradable.MISSING_PRICE;
         }
     }
 
